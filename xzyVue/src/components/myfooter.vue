@@ -19,15 +19,19 @@ export default {
     height:7.3%;
     background-color:#f5f5f5;
     position:fixed;
-    bottom: 0;
+    bottom: 10px;
 }
 #bul{
+     margin:0;
+    padding:0;
     height:100%;
     width:100%;
-    padding-top:3%;
+    /* padding-top:.066667rem; */
     box-sizing:border-box;
 }
 #bul li{
+    margin:0;
+    padding:0;
     display:inline-block;
     height:100%;
     width:8%;
@@ -39,11 +43,14 @@ export default {
     margin-left:13%;
 }
 #bul li p{
-    font-size:5px;
+    width:87%;
+    font-size:.106667rem;
+    font-weight:bold;
     color:#848484;
+    text-align:center;
 }
 #bul img{
     width:70%;
-    height:10px;
+    height:50%;
 }
 </style>

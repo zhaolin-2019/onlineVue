@@ -116,7 +116,7 @@ body,html{
    width:100%;
    height:10%;
    padding-left:3.7%;
-   /* padding-top:13px; */
+   padding-top:.133333rem;
    font-weight: bold;
    background-color:#fc1d4c;
    box-sizing:border-box;
@@ -137,8 +137,8 @@ body,html{
 #d42,#d47{
     width:100%;
     height:18%;
-    padding-left:10px;
-    padding-top:10px;
+    padding-left:.133333rem;
+    padding-top:.133333rem;
     background-color:rgba(255, 255, 255, 0.5);
     box-sizing:border-box;
 }
@@ -167,13 +167,13 @@ body,html{
    vertical-align: top;
 }
 #d44 p:nth-child(1){
-   font-size:10px;
+   font-size:.133333rem;
    font-weight:bold;
    color:black;
    margin-bottom:5px;
 }
 #d44 p:nth-child(2){
-   font-size:8px;
+   font-size:.106667rem;
    color:#848484;
 }
 #d45{
@@ -182,9 +182,10 @@ body,html{
    /* margin-top:20px; */
    /* padding-top:20px; */
    box-sizing:border-box;
+   margin-top:.666667rem;
 }
 #d45 p:nth-child(1){
-   font-size:10px;
+   font-size:.133333rem;
    font-weight:bold;
    color:#fc1d4c;
    display:inline-block;
@@ -198,10 +199,10 @@ body,html{
    list-style:none;
    padding:0;
    margin:0;
-   font-size:10px;
+   font-size:.133333rem;
    display:inline-block;
-   width:16px;
-   height:16px;
+   width:.4rem;
+   height:.4rem;
    border:1px #848484 solid;
    vertical-align: top;
 }
@@ -209,17 +210,17 @@ body,html{
    list-style:none;
    padding:0;
    margin:0;
-   font-size:10px;
+   font-size:.133333rem;
    display:inline-block;
-   width:16px;
-   height:16px;
+   width:.4rem;
+   height:.4rem;
    border:1px #848484 solid;
    vertical-align: top;
 }
 #d46 p{
    display:inline-block;
-   width:16px;
-   height:16px;
+   width:.4rem;
+   height:.4rem;
    border:1px #848484 solid;
    box-sizing:border-box;
    vertical-align: top;
@@ -227,8 +228,8 @@ body,html{
 }
 #d48 p{
    display:inline-block;
-   width:16px;
-   height:16px;
+   width:.4rem;
+   height:.4rem;
    border:1px #848484 solid;
    box-sizing:border-box;
    vertical-align: top;
@@ -246,16 +247,16 @@ body,html{
 }
 #d49{
    width:100%;
-   margin-left:10px;
+   margin-left:.133333rem;
 }
 #d49 p{
-   font-size:8px;
+   font-size:.106667rem;
    color:#848484;
    display:inline-block;
    font-weight:bold;
 }
 #d411{
-   font-size:10px;
+   font-size:.133333rem;
    font-weight: bold;
    display:inline-block;
    margin-left:45%;
@@ -272,20 +273,20 @@ body,html{
    width:100%;
    height:7.5%;
    background-color:rgba(255, 255, 255, 0.5);
-   padding-right:10px;
-   padding-left:10px;
+   padding-right:.133333rem;
+   padding-left:.133333rem;
    box-sizing: border-box;
-
+   position: absolute;
 }
 #checkAll{
     display:inline-block;
 }
 #d412 p{
     color:black;
-    font-size:10px;
+    font-size:.133333rem;
     font-weight:bold;
     display:inline-block;
-    margin-top:30px;
+    margin-top:.4rem;
 }
 #d412 button{
    margin:0;
@@ -297,6 +298,6 @@ body,html{
    border:none;
    color:white;
    float:right;
-   font-size:10px;
+   font-size:.133333rem;
 }
 </style>

@@ -8,6 +8,9 @@ import pay from '../views/pay.vue'
 import goodscar from '../views/goodscar.vue'
 import lianxi from '../views/lianxi.vue'
 import lianxi2 from '../views/lianxi2.vue'
+import address from '../views/address.vue'
+import person from '../views/person.vue'
+import grass from '../views/grass.vue'
 
 Vue.use(VueRouter)
 
@@ -41,6 +44,21 @@ const routes = [
     path: '/lianxi2',
     name: 'lianxi2',
     component: lianxi2
+  },
+  {
+    path: '/address',
+    name: 'address',
+    component: address
+  },
+  {
+    path: '/person',
+    name: 'person',
+    component: person
+  },
+  {
+    path: '/grass',
+    name: 'grass',
+    component: grass
   }
   // {
   //   path: '/about',
