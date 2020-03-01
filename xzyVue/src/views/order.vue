@@ -13,40 +13,27 @@
      </ul>
 
      <div id="middle12">
-          <div id="d11" v-for="phone in phones" :key="phone.id">
+          <div id="d11" v-for="order1 in orders1" :key="order1.id">
             <p>订单号：</p>
-            <p>{{phone.id}}</p>
+            <p>{{order1.id}}</p>
             <button>物流信息</button>
            </div>
 
-           <div id="top12" v-for="good in goods" :key="good.name">
+           <div id="top12" v-for="good1 in goods1" :key="good1.name">
 
-             <div id="top13">
+             <!-- <div id="top13"> -->
               <div id="img12">
                  <img src="../assets/17.jpg" alt="">
               </div>
               <div id="d12">
-                 <p>{{good.name}}</p>
+                 <p>{{good1.name}}</p>
                  <p>规格：</p>
-                 <p>{{good.style}}</p>
+                 <p>{{good1.style}}</p>
               </div>
-               <div id="d13">{{good.number}}</div>
-               <div id="d14">￥{{good.price}}</div>
+               <div id="d13">{{good1.number}}</div>
+               <div id="d14">￥{{good1.price}}</div>
               </div>
-
-            <!-- <div id="top13">
-              <div id="img12">
-                 <img src="../assets/17.jpg" alt="">
-              </div>
-              <div id="d12">
-                 <p></p>
-                 <p>规格：</p>
-                 <p></p>
-              </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
-           </div> -->
-        </div>
+        <!-- </div> -->
         </div>
 
         <ul id="ul11" @click="hid1">
@@ -54,67 +41,54 @@
            <li></li>
            <li></li>
         </ul>
-        <p id="p13">共2件商品</p>
+
+        <!-- <div v-for="allprice1 in allprice1" :key="allprice1.name"> -->
+        <p id="p13" v-for="allprice1 in allprice1" :key="allprice1.allnumber">共{{allprice1.allnumber}}件商品</p>
         <div id="d15"><!--
             --><div id="d16">
              <p>合计:</p>
-             <p>￥480.00</p>
+             <p v-for="allprice1 in allprice1" :key="allprice1.allnumber">{{allprice1.Allprice}}</p>
             </div>
            <button>确认收货</button>
  </div>
 
-     <div id="middle13" v-for="good in goods" :key="good.id">
-      <!-- <div v-for="good in goods" :key="good.id"> -->
-          <div id="d11">
+     <div id="middle13">
+          <div id="d11" v-for="order2 in orders2" :key="order2.id">
             <p>订单号：</p>
-            <p>567890-67890</p>
+            <p>{{order2.id}}</p>
             <button>物流信息</button>
            </div>
 
-           <div id="top12">
+           <div id="top12" v-for="good2 in goods2" :key="good2.name">
 
-             <div id="top13">
+             <!-- <div id="top13"> -->
               <div id="img12">
                  <img src="../assets/17.jpg" alt="">
               </div>
               <div id="d12">
-                 <p>新太阳镜时尚墨镜</p>
+                 <p>{{good2.name}}</p>
                  <p>规格：</p>
-                 <p>墨绿色</p>
+                 <p>{{good2.style}}</p>
               </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
+               <div id="d13">{{good2.number}}</div>
+               <div id="d14">￥{{good2.price}}</div>
               </div>
-
-            <div id="top13">
-              <div id="img12">
-                 <img src="../assets/17.jpg" alt="">
-              </div>
-              <div id="d12">
-                 <p>新太阳镜时尚墨镜</p>
-                 <p>规格：</p>
-                 <p>墨绿色</p>
-              </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
-           </div>
-         </div>
+        <!-- </div> -->
+        </div>
 
         <ul id="ul12" @click="hid1">
            <li></li>
            <li></li>
            <li></li>
         </ul>
-
-        <p id="p13">共2件商品</p>
+        <p id="p13" v-for="allprice2 in allprice2" :key="allprice2.Allprice">共{{allprice2.allnumber}}件商品</p>
         <div id="d15"><!--
             --><div id="d16">
              <p>合计:</p>
-             <p>￥480.00</p>
+             <p v-for="allprice2 in allprice2" :key="allprice2.Allprice">{{allprice2.Allprice}}</p>
             </div>
            <button>确认收货</button>
-           </div>
-</div>
+ </div>  
  </div>
 </template>
 <script>
@@ -122,8 +96,12 @@ import axios from 'axios';
 export default {
   data(){
       return{
-        goods:[],
-        phones:[]
+        goods1:[],
+        orders1:[],
+        goods2:[],
+        orders2:[],
+        allprice1:[],
+        allprice2:[]
       }
   },
   methods: {
@@ -137,9 +115,29 @@ export default {
     }
   },
      created(){
-           axios.get('http://localhost:3000/goods')
+           axios.get('http://localhost:3000/goods1')
             .then((res)=>{//res是response
-                this.goods=res.data
+                this.goods1=res.data
+            }),
+              axios.get('http://localhost:3000/orders1')
+            .then((res)=>{//res是response
+                this.orders1=res.data
+            }),
+            axios.get('http://localhost:3000/goods2')
+            .then((res)=>{//res是response
+                this.goods2=res.data
+            }),
+              axios.get('http://localhost:3000/orders2')
+            .then((res)=>{//res是response
+                this.orders2=res.data
+            }),
+            axios.get('http://localhost:3000/allprice1')
+            .then((res)=>{//res是response
+                this.allprice1=res.data
+            }),
+              axios.get('http://localhost:3000/allprice2')
+            .then((res)=>{//res是response
+                this.allprice2=res.data
             })
   }
 }
@@ -239,12 +237,10 @@ export default {
 }
 #middle12,#middle13{
    width:100%;
-   height:20%;
-   background-color:rgba(255, 255, 255, 0.5);
-}
-#middle12,#middle13{
+   height:28%;
+   /* background-color:rgba(255, 255, 255, 0.5); */
    margin-top:5px;
-   margin-bottom:10px;
+   margin-bottom:5px;
    padding-left:20px;
    /* padding-top:10px; */
    box-sizing:border-box;
@@ -275,7 +271,7 @@ export default {
 }
 #top12,#top14{
    height:40%;
-   margin-bottom:10px;
+   margin-bottom:5px;
    overflow: hidden;
 }
 /* #top13{
@@ -329,6 +325,8 @@ export default {
    padding-left:45%;
    box-sizing: border-box;
    list-style: none;
+   font-size:0;
+
 }
 #ul11 li{
    width:3px;
@@ -358,11 +356,15 @@ export default {
    height:6px;
    margin-bottom:5px;
    margin-top:5px;
+   padding-left:20px;
+
 }
 #d15{
    padding:0;
    font-size: 0;
    margin-top:10px;
+   padding-left:20px;
+
 }
 #d16{
    height:20px;
