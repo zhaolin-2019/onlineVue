@@ -5,21 +5,74 @@
         <p id="p12">我的订单</p>
      </div>
      <ul id="middle11">
-        <li><a href=""><div ><img src="../assets/16.jpg" alt=""></div><p>全部</p></a></li>
-        <li><a href=""><div ><img src="../assets/12.jpg" alt=""></div><p>待付款</p></a></li>
-        <li><a href=""><div ><img src="../assets/13.jpg" alt=""></div><p>已付款</p></a></li>
-        <li><a href=""><div ><img src="../assets/14.jpg" alt=""></div><p>配货中</p></a></li>
-        <li><a href=""><div ><img src="../assets/15.jpg" alt=""></div><p>评论</p></a></li>
+        <li><a href=""><div ><img src="../assets/16.jpg" alt=""></div><p>全部</p></a></li><!--
+        --><li><a href=""><div ><img src="../assets/12.jpg" alt=""></div><p>待付款</p></a></li><!--
+         --><li><a href=""><div ><img src="../assets/13.jpg" alt=""></div><p>已付款</p></a></li><!--
+         --><li><a href=""><div ><img src="../assets/14.jpg" alt=""></div><p>配货中</p></a></li><!--
+         --><li><a href=""><div ><img src="../assets/15.jpg" alt=""></div><p>评论</p></a></li>
      </ul>
+
      <div id="middle12">
-        <div>
-            <div id="d11">
+          <div id="d11" v-for="phone in phones" :key="phone.id">
+            <p>订单号：</p>
+            <p>{{phone.id}}</p>
+            <button>物流信息</button>
+           </div>
+
+           <div id="top12" v-for="good in goods" :key="good.name">
+
+             <div id="top13">
+              <div id="img12">
+                 <img src="../assets/17.jpg" alt="">
+              </div>
+              <div id="d12">
+                 <p>{{good.name}}</p>
+                 <p>规格：</p>
+                 <p>{{good.style}}</p>
+              </div>
+               <div id="d13">{{good.number}}</div>
+               <div id="d14">￥{{good.price}}</div>
+              </div>
+
+            <!-- <div id="top13">
+              <div id="img12">
+                 <img src="../assets/17.jpg" alt="">
+              </div>
+              <div id="d12">
+                 <p></p>
+                 <p>规格：</p>
+                 <p></p>
+              </div>
+               <div id="d13">x1</div>
+               <div id="d14">￥229.00</div>
+           </div> -->
+        </div>
+        </div>
+
+        <ul id="ul11" @click="hid1">
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+        <p id="p13">共2件商品</p>
+        <div id="d15"><!--
+            --><div id="d16">
+             <p>合计:</p>
+             <p>￥480.00</p>
+            </div>
+           <button>确认收货</button>
+ </div>
+
+     <div id="middle13" v-for="good in goods" :key="good.id">
+      <!-- <div v-for="good in goods" :key="good.id"> -->
+          <div id="d11">
             <p>订单号：</p>
             <p>567890-67890</p>
             <button>物流信息</button>
            </div>
 
            <div id="top12">
+
              <div id="top13">
               <div id="img12">
                  <img src="../assets/17.jpg" alt="">
@@ -31,72 +84,8 @@
               </div>
                <div id="d13">x1</div>
                <div id="d14">￥229.00</div>
-           </div>
-            <div id="top13">
-              <div id="img12">
-                 <img src="../assets/17.jpg" alt="">
               </div>
-              <div id="d12">
-                 <p>新太阳镜时尚墨镜</p>
-                 <p>规格：</p>
-                 <p>墨绿色</p>
-              </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
-           </div>
-        </div>
-    </div>
 
-        <ul id="ul11" @click="hid1">
-           <li></li>
-           <li></li>
-           <li></li>
-        </ul>
-
-        <p id="p13">共2件商品</p>
-        <div id="d15">
-            <div id="d16">
-             <p>合计:</p>
-             <p>￥480.00</p>
-            </div>
-           <button>确认收货</button>
-        </div>
-     </div>
-
-     <div id="middle13">
-         <div>
-            <div id="d11">
-            <p>订单号：</p>
-            <p>567890-67890</p>
-            <button>物流信息</button>
-           </div>
-
-           <div id="top14">
-            <div id="top13">
-              <div id="img12">
-                 <img src="../assets/17.jpg" alt="">
-              </div>
-              <div id="d12">
-                 <p>新太阳镜时尚墨镜</p>
-                 <p>规格：</p>
-                 <p>墨绿色</p>
-              </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
-           </div>
-
-            <div>
-              <div id="img12">
-                 <img src="../assets/17.jpg" alt="">
-              </div>
-              <div id="d12">
-                 <p>新太阳镜时尚墨镜</p>
-                 <p>规格：</p>
-                 <p>墨绿色</p>
-              </div>
-               <div id="d13">x1</div>
-               <div id="d14">￥229.00</div>
-           </div>
             <div id="top13">
               <div id="img12">
                  <img src="../assets/17.jpg" alt="">
@@ -110,27 +99,33 @@
                <div id="d14">￥229.00</div>
            </div>
          </div>
-        </div>
 
-        <ul id="ul12" @click="hid2">
+        <ul id="ul12" @click="hid1">
            <li></li>
            <li></li>
            <li></li>
         </ul>
 
         <p id="p13">共2件商品</p>
-        <div id="d15">
-            <div id="d16">
+        <div id="d15"><!--
+            --><div id="d16">
              <p>合计:</p>
              <p>￥480.00</p>
             </div>
            <button>确认收货</button>
-        </div>
-     </div>
-   </div>
+           </div>
+</div>
+ </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
+  data(){
+      return{
+        goods:[],
+        phones:[]
+      }
+  },
   methods: {
     hid1 () {
       let a = document.getElementById('top12')
@@ -140,72 +135,85 @@ export default {
       let a = document.getElementById('top14')
       a.style.overflow = 'auto'
     }
+  },
+     created(){
+           axios.get('http://localhost:3000/goods')
+            .then((res)=>{//res是response
+                this.goods=res.data
+            })
   }
 }
 </script>
 <style scoped>
 #box1{
-   width:275px;
+   width:100%;
    height:100%;
    padding:0;
    margin:0;
    background-color:#f5f5f5;
-   padding-bottom:5px;
+   padding-top:18%;
+   box-sizing:border-box;
+   position:absolute;
 }
 #header1{
-   width:275px;
-   height:30px;
-   padding:0;
+   width:100%;
+   height:10%;
+   padding-left:3.7%;
+   padding-top:.133333rem;
    font-weight: bold;
    background-color:#fc1d4c;
-   position:relative;
+   box-sizing:border-box;
+   position:fixed;
+   top:0;
+   z-index: 1;
 }
 #img11{
-   width:10px;
-   height:10px;
-   margin-left:10px;
-   margin-top:10px;
+    width:3.7%;
 }
 #p12{
-   font-size:8px;
+   font-size:.16rem;
    color:white;
-   position:absolute;
-   left:50%;
-   top:50%;
-   transform:translateX(-50%) translateY(-50%);
+   display:inline-block;
+   margin-left:38%;
 }
 #middle11{
-   width:275px;
-   height:70px;
+   width:100%;
+   height:20%;
    background-color:rgba(255, 255, 255, 0.5);
-   padding-left:13px;
-   padding-top:15px;
    box-sizing: border-box;
 }
 #middle11 li{
-   width:30px;
-   height:40px;
+   width:20%;
+   height:50%;
    display:inline-block;
-   margin-right:25px;
+   text-align: center;
+   position:relative;
+   margin-top:8%;
 }
 #middle11 li:last-child{
-    margin-right:10px;
+    margin-right:none;
 }
 #middle11 div{
-   width:30px;
-   height:30px;
+   width:50px;
+   height:50px;
    background-color:white;
+   border-radius: 50%;
+   text-align:center;
+   display:inline-block;
 }
 #middle11 img{
-   width:30px;
-   height:30px;
+   width:50px;
+   height:50px;
    border-radius: 50%;
+   position:absolute;
+   left:50%;
+   transform: translateX(-50%);
 }
 #middle11 a{
    list-style:none;
    text-decoration: none;
    color:#848484;
-   font-size:8px;
+   font-size:10px;
    text-align:center;
 }
 #middle11 p:hover{
@@ -229,29 +237,29 @@ export default {
    margin: 0 auto;
    margin-top:5px;
 }
-
 #middle12,#middle13{
-   width:255px;
-   height:180px;
+   width:100%;
+   height:20%;
    background-color:rgba(255, 255, 255, 0.5);
-   margin-left:10px;
 }
 #middle12,#middle13{
    margin-top:5px;
    margin-bottom:10px;
-   padding-left:10px;
-   padding-top:10px;
+   padding-left:20px;
+   /* padding-top:10px; */
    box-sizing:border-box;
 }
 #d11{
-   height:10px;
-   width:255px;
-   margin-bottom:15px;
+   width:100%;
+   margin-bottom:10px;
+   font-size: 0;
 }
 #d11 p{
-   font-size:6px;
+   font-size:10px;
    color:#848484;
    display:inline-block;
+   padding:0;
+   margin:0;
 }
 #d11 button{
    margin:0;
@@ -261,33 +269,32 @@ export default {
    border:1px #848484 solid;
    border-radius:15%;
    width:40px;
-   height:10px;
+   height:20px;
    margin-left:120px;
    font-size:6px;
 }
 #top12,#top14{
-   height:80px;
+   height:40%;
    margin-bottom:10px;
    overflow: hidden;
 }
-#top13{
-   height:35px;
-   margin-bottom:10px;
-}
+/* #top13{
+   height:20%;
+} */
 #img12{
-   width:35px;
-   height:35px;
+   width:50px;
+   height:50px;
    display:inline-block;
    margin-right:5px;
    box-sizing:border-box;
 }
 #img12 img{
-   width:35px;
-   height:35px;
+   width:50px;
+   height:50px;
 }
 #d12{
    display:inline-block;
-   height:35px;
+   height:20px;
    vertical-align: top;
 }
 #d12 p:first-child{
@@ -306,7 +313,7 @@ export default {
    display:inline-block;
 }
 #d13,#d14{
-   height:35px;
+   height:20px;
    color:black;
    font-size:8px;
    display:inline-block;
@@ -315,28 +322,34 @@ export default {
    padding-top:3px;
 }
 #ul11,#ul12{
-   margin-left:100px;
+   width:100%;
+   height:10px;
+   margin:0;
+   padding:0;
+   padding-left:45%;
+   box-sizing: border-box;
+   list-style: none;
 }
 #ul11 li{
    width:3px;
    height:3px;
    background-color:#848484;
    border-radius: 50%;
-   display:inline-block;
-   margin-left:5px;
+   float: left;
+   margin-right:10px;
 }
 #ul12 li{
    width:3px;
    height:3px;
    background-color:#848484;
    border-radius: 50%;
-   display:inline-block;
-   margin-left:5px;
+   float: left;
+   margin-left:10px;
 }
 #ul11:hover li{
   background-color:#fc1d4c;
 }
-#ul11:hover li{
+#ul12:hover li{
   background-color:#fc1d4c;
 }
 #p13{
@@ -345,6 +358,11 @@ export default {
    height:6px;
    margin-bottom:5px;
    margin-top:5px;
+}
+#d15{
+   padding:0;
+   font-size: 0;
+   margin-top:10px;
 }
 #d16{
    height:20px;

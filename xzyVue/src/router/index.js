@@ -11,6 +11,7 @@ import lianxi2 from '../views/lianxi2.vue'
 import address from '../views/address.vue'
 import person from '../views/person.vue'
 import grass from '../views/grass.vue'
+import lianxi3 from '../views/lianxi3.vue'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
     path: '/grass',
     name: 'grass',
     component: grass
+  },
+  {
+    path: '/lianxi3',
+    name: 'lianxi3',
+    component: lianxi3
   }
   // {
   //   path: '/about',

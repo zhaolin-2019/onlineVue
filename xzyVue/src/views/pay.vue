@@ -15,37 +15,38 @@
 </script>
 <style scoped>
 #box3{
-   width:275px;
+   width:100%;
    height:100%;
    padding:0;
    margin:0;
    background-color:#f5f5f5;
    padding-bottom:10px;
+   position:absolute;
+   padding-top:18%;
 }
 #header3{
-   width:275px;
-   height:30px;
-   padding:0;
+  width:100%;
+   height:10%;
+   padding-left:3.7%;
+   padding-top:.133333rem;
    font-weight: bold;
    background-color:#fc1d4c;
-   position:relative;
+   box-sizing:border-box;
+   position:fixed;
+   top:0;
+   z-index: 1;
 }
 #img31{
-   width:10px;
-   height:10px;
-   margin-left:10px;
-   margin-top:10px;
+    width:3.7%;
 }
 #p31{
-   font-size:8px;
+   font-size:.16rem;
    color:white;
-   position:absolute;
-   left:50%;
-   top:50%;
-   transform:translateX(-50%) translateY(-50%);
+   display:inline-block;
+   margin-left:38%;
 }
 #d31{
-    width:275px;
+    width:100%;
     padding-left:10px;
     padding-top:10px;
     background-color:rgba(255, 255, 255, 0.5);
